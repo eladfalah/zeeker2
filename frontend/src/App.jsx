@@ -1,7 +1,13 @@
-import { useState } from 'react'
-import './App.css'
+import react from 'react'
+import 'bootstrap/dist/css/bootstrap.css';
 
-function App() {
+import {Logine_page} from './components/Logine_page.jsx'
+let App=()=> {
+return(
+<>
+<Logine_page />
+</>
+);
 }
 
 export default App
