@@ -1,14 +1,12 @@
 import React from 'react';
 
-export const Orange_button = ({text}) => {
-let class_name;
-let change_color=(color)=>()
+export const Orange_button = (text) => {
 return (
       
     <>
-      <button>
-{text}
-      </button>
+  
+<button type="button" className="btn text-white btn-outline-warning">{`${text.text}`}</button>
+
     </>
   );
 };

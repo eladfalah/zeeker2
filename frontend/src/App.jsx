@@ -1,11 +1,10 @@
-import react from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 
-import {Logine_page} from './components/Logine_page.jsx'
+import {Home_page} from './components/Home_page'
 let App=()=> {
 return(
 <>
-<Logine_page />
+<Home_page />
 </>
 );
 }

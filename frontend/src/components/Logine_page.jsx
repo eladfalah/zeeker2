@@ -1,9 +1,8 @@
 import car_logine from '../assets/image_car_1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
 import zeekr_logo from '../assets/ZEEKR_full logo white SHKOF.png'
 import Input_section from './Input_section'
+import Orange_button from './Orange_button'
 export const Logine_page = () => {
  return (
       
@@ -27,6 +26,8 @@ export const Logine_page = () => {
 <div className='row max-0 footer'>
 
 <Input_section name="q" type="checkbox" text="אישור תנאי שימוש" />
+<Orange_button  text="המשך" />
+<h6 className='text-center'><a className="text-white" href="#">יצירת קשר</a></h6>
 </div>
 </div>
     </>
