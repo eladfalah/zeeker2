@@ -1,4 +1,7 @@
-{
+const mongoose = require('mongoose');
+
+const documentSchema = new mongoose.Schema({
+
   userId: {
     type: String,
     required: true
@@ -14,8 +17,13 @@
   fileType: {
     type: String
   },
-  createdAt: {
+fileSize: {    
+    type: Number
+  },
+createdAt: {
     type: Date,
     default: Date.now
   }
-}
+});
+
+module.exports = mongoose.model('Document', documentSchema);

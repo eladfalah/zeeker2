@@ -1,25 +1,17 @@
-export const Panel = ({ icon, top_text, bottom_text }) => {
-  return (
-    <div className="col-4"> 
-      <div className="card bg-dark text-center p-0" aria-hidden="true" >
-        
-        
-          <img 
-            className="card-img-top mx-auto" 
-            src={icon?`../../public/assets/icons/${icon}`:"..."} 
-             
-            style={{ width: '50%', height: 'auto' }}
-          />
-        
-        
-        <div className="card-body p-0 mt-2">
-          <p className="card-text text-wrap mb-0 text-truncate" style={{ height: "70px" }}>
-            <span className="d-block text-secondary small">{top_text}</span>
-            <span className="d-block text-white fw-bold">{bottom_text}</span>
-          </p>
-        </div>
+import React from 'react';
 
-      </div>
+export const Panel = ({ icon, top_text,bottom_text }) => {
+  return (
+    <div className="d-flex flex-column align-items-center justify-content-center bg-dark p-3 rounded text-white text-center w-100 h-100">
+      <img 
+        src={icon ? `../../public/assets/icons/${icon}` : "..."} 
+        alt={'icon'} 
+        className="img-fluid mw-100 mh-100"
+      />
+<small className='wrap text-secondary'>{top_text}</small>
+<span className="mt-2 text-truncate w-100 fs-6">
+        {bottom_text}
+      </span>
     </div>
   );
 };

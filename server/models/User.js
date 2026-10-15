@@ -3,7 +3,7 @@ let jwt = require("jsonwebtoken");
 let mongoose = require("mongoose");
 
 let schema = new mongoose.Schema({
-  firebaseUid: {
+  firebaseuid: {
     type: String,
     required: true,
     unique: true
@@ -24,12 +24,6 @@ let schema = new mongoose.Schema({
     default: Date.now
   }
 })
-schema.pre("save", async  ()=> {
-  // FIXED: "password" must be passed as a string literal
-  if (this.isModified("password")) {
-    this.password = await bcrypt.hash(this.password, 10);
-  }
-});
 
 
 schema.methods.generateAuthToken =  ()=> {
@@ -39,5 +33,4 @@ schema.methods.generateAuthToken =  ()=> {
 
 let User = mongoose.model("User", schema);
 
-// FIXED: Corrected export syntax
 module.exports = User;

@@ -1,32 +1,24 @@
-import React from 'react';
-import {Panel} from './Panel.jsx'
+// Carousel.jsx
+// TO-DO (.env): None
 
-export const Carousel = ({slides}) => {
 
-let safeSlides = slides || [];
-return (
-<>
-<div id="carouselExampleControls" className="carousel slide container d-flex "  data-bs-interval="false">
-<div className="carousel-inner">
-{
-safeSlides.map((slide, index)=>
-        <div key={index} className={`carousel-item ${index==0?'active':''}`}>
-{slide}        
-</div>
-      )}
-</div>
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div>
-</>
-);
+export const Carousel = ({ title, slides = [] }) => {
+  return (
+    <>
+      <div className='d-flex justify-content-center'>
+        <h6 className='p-0'>{title}</h6>
+      </div>
+      <div className="container-fluid px-0">
+        <div className="d-flex flex-nowrap overflow-x-auto gap-3 py-2 px-1">
+          {slides.flat().map((slide, index) => (
+            <div key={index} className="flex-shrink-0 col-4 col-sm-3 col-md-2">
+              {slide}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
 };
 
-export default Carousel;  
+export default Carousel;
